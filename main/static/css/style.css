@@ -1,0 +1,78 @@
+.desktop_main {
+  background-image: url("/static/images/pattaya_beach.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.header {
+  padding: 6px 8px 6px 16px;
+  width: 100%;
+  height: 160px;
+  background-color: #D9D9D9;
+  opacity: .6;  
+}
+
+.sidenav {
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 160;
+  left: 0;
+  background-color: #D9D9D9;
+  opacity: .6;  
+  overflow-x:  :hidden;
+  padding-top: 20px;
+  }
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+  }
+
+.sidenav a:hover {
+  color:#F1F1F1;
+  }
+
+.main {
+  height: 688px;
+  margin-left:245px;
+  padding:10px;
+  }
+
+.view_show_lists {
+  color:red
+  }
+
+#footer_bl {
+  background-color: #D9D9D9;
+  opacity: .6;
+  height: 160px;
+}
+
+#copywrite {
+  display: inline-block;
+  background-color: green;  
+}
+
+#sitemap {
+  display: inline-block;
+  background-color: red;
+}
+
+#social {
+  display: inline-block;
+  background-color: blue;  
+}
+
+#footer-logo {
+  display: inline-block;
+  background-color: sienna;   
+}
+
+
+#footer h5 {
+  border-bottom: 3px solid #919191
+  }

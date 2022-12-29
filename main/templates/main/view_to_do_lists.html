@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+View to do lists
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <h3> For user
+        <span  class = 'view_show_lists'>{{response.user}}</span>
+        found
+        <span  class = 'view_show_lists'>{{ todolist|length }}</span>
+        to do lists
+    </h3>
+    <hr class = "mt-0 mb-4">
+    <form method="post", action="#">
+        {% csrf_token %}
+        {% for td in todolist %}
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="clicked"
+                       name="td_list{{td.id}}"
+                       id="flexCheckDefault">
+                <label class="form-check-label"
+                       for="flexCheckDefault">
+                       <p>
+                           <a href="to_do_list_{{td.id}}">
+                               {{td.name}}
+                           </a>
+                       </p>
+                </label>
+            </div>
+        {% endfor %}
+        <button type="submit",
+                name="delete",
+                value="delete",
+                class = "btn btn-success">
+                Delete list
+        </button>
+    </form>
+{% endblock %}
