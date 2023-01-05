@@ -29,9 +29,8 @@ ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = 'allow'
 
 CSRF_TRUSTED_ORIGINS = [                          
-                'https://pyscientistlair.pyscientist.repl.co',
-                       ]
-
+                'https://23ed-1-46-132-196.ap.ngrok.io',
+                ]
 # Application definition
 
 INSTALLED_APPS = [

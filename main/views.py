@@ -63,3 +63,7 @@ def view_to_do_lists(response):
     return render(response,
                   "main/view_to_do_lists.html",
                   {"todolist": response.user.todolist.all(), 'response': response})
+
+
+def view_figures(response):
+    return render(response, "main/view_figures.html")
