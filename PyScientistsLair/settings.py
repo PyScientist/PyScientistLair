@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = 'allow'
 
 CSRF_TRUSTED_ORIGINS = [                          
-                'https://23ed-1-46-132-196.ap.ngrok.io',
+                'https://c894-1-47-132-28.ap.ngrok.io',
                 ]
 # Application definition
 
@@ -81,12 +81,15 @@ WSGI_APPLICATION = 'PyScientistsLair.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': '192.168.56.102',
+        'PORT': '5432',
+        'NAME': 'pyscientist_db',
+        'USER': 'pyscientist',
+        'PASSWORD': 'Sobakka757',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -98,9 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
-#   {
-#        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },

@@ -21,6 +21,7 @@ def view_items_in_list_to_do(response, id_to_do_list):
 
         elif response.POST.get("newItem"):
             text = response.POST.get("new_item_text_field")
+            print(text)
             if len(text) > 2:
                 ls.item_set.create(text=text, complete=False)
 
