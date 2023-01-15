@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = 'allow'
 
 CSRF_TRUSTED_ORIGINS = [                          
-                'https://b962-1-47-132-28.ap.ngrok.io',
+                'https://1ec5-1-46-193-138.ap.ngrok.io',
                 ]
 # Application definition
 

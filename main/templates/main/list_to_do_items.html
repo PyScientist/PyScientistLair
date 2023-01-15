@@ -3,53 +3,58 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-		<h1>{{ls.name}}</h1>
-		<form method="post", action="#">
-			{% csrf_token %}
-			{% for item in ls.item_set.all %}
-			<div class="input-group mb-3">
-					<div class="input-group-text">
-						{% if item.complete == True %}
-							<input type="checkbox", value="clicked", name="select_{{item.id}}", checked>
-						{% else %}
-							<input type="checkbox", value="clicked", name="select_{{item.id}}">
-						{% endif %}
+		<div class="to_do_list_items_show_container">
+			<h1>{{ls.name}}</h1>
+			<form method="post", action="#">
+				{% csrf_token %}
+				{% for item in ls.item_set.all %}
+					<div class="input-group mb-3">
+							<div class="input-group-text">
+								{% if item.complete == True %}
+									<input type="checkbox", value="clicked", name="select_{{item.id}}", checked>
+								{% else %}
+									<input type="checkbox", value="clicked", name="select_{{item.id}}">
+								{% endif %}
+							</div>
+
+							<input type="text",
+								   name="text_{{item.id}}",
+								   value="{{item.text}}",
+								   class="form-control">
+
+							<div class="input-group-text">
+								<button type="submit",
+									name="DelItem",
+									value="del_{{item.id}}",
+									class="btn btn-outline-success",
+									data-toggle="tooltip",
+									data-placement="right",
+									title="Delete item">
+								</button>
+							</div>
 					</div>
-
-					<input type="text",
-						   name="text_{{item.id}}",
-						   value="{{item.text}}",
-						   class="form-control">
-
-					<div class="input-group-text">
+				{% endfor %}
+				<div class="items_tool">
+					<div class="add_item_tool">
+						<div class="input-group mb-3">
+							<button type="submit", name="newItem", value="newItem", class = "btn btn-success">
+								Add Item
+							</button>
+							<input type="text", name="new_item_text_field", style="width:600px">
+						</div>
+					</div>
+					<div class="save_state_tool">
 						<button type="submit",
-							name="DelItem",
-							value="del_{{item.id}}",
-							style="background-color: red; padding: 0px 20px;",
-							class="btn btn-success">
-							Delete Item
+								name="save",
+								value="save",
+								style="padding: 0px 20px; height: 40px;",
+								class="btn btn-success">
+								Save items state
 						</button>
 					</div>
-			</div>
-
-			{% endfor %}
-
-			<div class="input-group mb-3">
-				<button type="submit", name="newItem", value="newItem", class = "btn btn-success">
-					Add Item
-				</button>
-				<input type="text", name="new_item_text_field">
-			</div>
-			<div>
-				<button type="submit",
-						name="save",
-						value="save",
-						style="padding: 0px 20px",
-						class="btn btn-success">
-						Save items state
-				</button>
-			</div>
-		</form>
+				</div>
+			</form>
+		</div>
     {% else %}
     	<p>Please login <a href="/login">here</a></p>
     {% endif %}

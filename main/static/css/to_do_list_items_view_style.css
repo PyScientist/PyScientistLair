@@ -1,0 +1,20 @@
+.to_do_list_items_show_container {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.items_tool {
+    width: 100%;
+    display:flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+
+.add_item_tool {
+}
+
+.save_state_tool {
+    margin-left: 20px;
+}

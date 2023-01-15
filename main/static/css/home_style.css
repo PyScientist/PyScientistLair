@@ -1,4 +1,4 @@
-.full_home_greatings_field {
+.full_home_greetings_field {
     margin-top: 60px;
     margin-left: 100px;
     margin-right: 100px;
@@ -6,7 +6,7 @@
     flex-flow: column;
 }
 
-.fake_home_greatings_field {
+.fake_home_greetings_field {
     height: 584px;
     width: 100%;
     background-color: #D9D9D9;
@@ -14,7 +14,7 @@
     border-radius: 35px;
 }
 
-.home_greatings_field {
+.home_greetings_field {
     margin-top: -584px;
     height: 584px;
     width: 100%;
@@ -26,13 +26,28 @@
     justify-content: center;
 }
 
-.home_greatings_field span  {
+.home_greetings_field span  {
     color: black;
     font-size: 26px;
     font-family: inter;
 }
 
-.home_greatings_field span.bold  {
+.home_greetings_field span.bold  {
     font-weight: bold;
     font-size: 30px;
+}
+
+.logging_attention_message {
+        font-weight: bold;
+        font-size: 30px;
+        font-family: inter;
+}
+
+.logging_attention_message a {
+        color: #818181;
+        text-decoration: none;
+}
+
+.logging_attention_message a:hover {
+        color:#F1F1F1;
 }

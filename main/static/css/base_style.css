@@ -2,14 +2,17 @@
   background-image: url("/static/images/pattaya_beach.png");
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 1000px;
+  width: 100%;
+  min-width:1200px;
+  height: 100%;
 }
 
 .header_fake {
-  height: 160px;
-  width: 100%;
   background-color: #D9D9D9;
   opacity: .4;
+  width: 100%;
+  min-width:1200px;
+  height: 160px;
   border-radius: 0px 0px 25px 25px;
 }
 
@@ -17,8 +20,8 @@
   margin-top: -160px;
   opacity: .99;
   width: 100%;
+  min-width:1200px;
   height: 160px;
-  display: -webkit-flex;
   display: flex;
   flex-flow: column;
 }
@@ -87,18 +90,20 @@ div.authorization_pannel {
     grid-template-columns: auto;
     }
 
-
 .content_field {
-    height: 704px;
+    height: 100%;
+    min-height: 704px;
     width: 100%;
+    min-width:1200px;
     text-align: center;
 }
 
 #footer_fake {
-  height: 160px;
-  width: 100%;
   background-color: #D9D9D9;
   opacity: .4;
+  height: 160px;
+  width: 100%;
+  min-width:1200px;
   border-radius: 25px 25px 0px 0px;
 }
 
@@ -106,6 +111,7 @@ div.authorization_pannel {
   margin-top: -160px;
   opacity: .99;
   width: 100%;
+  min-width:1200px;
   height: 160px;
   display: flex;
   justify-content: space-between;
@@ -119,33 +125,38 @@ img.footer-logo {
   padding-right: 5px;
 }
 
-#copyrite {
+#cat_frame {
   display: flex;
   align-items: center;
-}
-
-#sitemap {
-  display: flex;
-  align-items: center;
-  width = 200px;
-}
-
-#social {
-  display: flex;
-  align-items: center;
-  width = 200px;
-}
-
-#footer-logo {
-  display: flex;
-  align-items: center;
-  width = 140px;
+  justify-content: flex-start;
+  width: 100%;
+  flex: 1;
 }
 
 .footer span {
     color: #818181;
     font-size: 16px;
-    width: 100%;
     text-align: center;
+}
+
+#copyrite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+#sitemap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+#social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
