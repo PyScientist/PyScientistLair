@@ -65,10 +65,6 @@ def view_items_in_list_to_do(response, id_to_do_list):
     return render(response, "main/list_to_do_items.html", {"ls": ls})
 
 
-def view_vocabulary(response):
-    return render(response, "main/view_vocabulary.html")
-
-
 def view_images(response):
     return render(response, "main/view_images.html")
 
