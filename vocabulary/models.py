@@ -18,8 +18,8 @@ class VocItem(models.Model):
     additional_meaning = models.CharField(max_length=300, default='unknown')
     word_explanation = models.TextField(default='unknown')
     date_creation = models.DateTimeField(auto_now_add=True)
-    on_repeate = models.BooleanField(default=True)
+    on_repeat = models.BooleanField(default=True)
     learned = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.text
+        return self.word

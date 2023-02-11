@@ -1,0 +1,115 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Words in Vocabulary
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class = "voc_container">
+            <div class = "add_word_in_voc_field">
+                <form method="post", action="" class="adding_new_word_form">
+                    {% csrf_token %}
+                    <div class = "form_row_word_add" id="word_row">
+                        <div class = "form_tag_word_add" id="word_tag">
+                            {{form.word.label_tag}}
+                        </div>
+                        <div class = "form_field_word_add" id="word_field">
+                            {{form.word}}
+                        </div>
+                    </div>
+                    <div class = "form_row_word_add" id="translation_row">
+                        <div class = "form_tag_word_add" id="translation_tag">
+                            {{form.main_translation.label_tag}}
+                        </div>
+                        <div class = "form_field_word_add" id="translation_field">
+                            {{form.main_translation}}
+                        </div>
+                    </div>
+                    <div class = "form_row_word_add" id="additional_meaning_row">
+                        <div class = "form_tag_word_add" id="additional_meaning_tag">
+                            {{form.additional_meaning.label_tag}}
+                        </div>
+                        <div class = "form_field_word_add" id="additional_meaning_field">
+                            {{form.additional_meaning}}
+                        </div>
+                    </div>
+                    <div class = "form_row_word_add" id="explanation_row">
+                        <div class = "form_tag_word_add" id="explanation_tag">
+                            {{form.word_explanation.label_tag}}
+                        </div>
+                        <div class = "form_field_word_add" id="explanation_field">
+                            {{form.word_explanation}}
+                        </div>
+                    </div>
+                    <div class = "form_row_word_add" id="button_row">
+                        <div class = "form_tag_word_add" id="button_tag">
+                        </div>
+                        <div class = "form_field_word_add" id="button_field">
+                            <button type="submit",
+                                    name="create"
+                                    value="create",
+                                    style="width: 170px",
+                                    class="btn btn-success">
+                                    Create word
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class = "container_words_table" id="container_words_table">
+                <div class="words_vocabulary_table">
+                    <div class="table-header">
+                        <div class="header__item">
+                            <a id="word" class="filter__link" href="#">
+                                Word
+                            </a>
+                        </div>
+                        <div class="header__item">
+                            <a id="translation" class="filter__link filter__link--number" href="#">
+                                Translation
+                            </a>
+                        </div>
+                        <div class="header__item">
+                            <a id="from_date" class="filter__link filter__link--number" href="#">
+                                Date
+                            </a>
+                        </div>
+                        <div class="header__item">
+                            <a id="on_repeate" class="filter__link filter__link--number" href="#">
+                                Repeat
+                            </a>
+                        </div>
+                        <div class="header__item">
+                            <a id="learned" class="filter__link filter__link--number" href="#">
+                                Learned
+                            </a>
+                        </div>
+                    </div>
+                    <div class="table-content">
+                        {% for word in vocabulary.vocitem_set.all %}
+                            <div class="table-row">
+                                <div class="table-data">
+                                    <a href="word_{{word.word}}">{{word.word}}</a>
+                                </div>
+                                <div class="table-data">{{word.main_translation}}</div>
+                                <div class="table-data">{{word.date_creation}}</div>
+                                <div class="table-data">{{word.on_repeat}}</div>
+                                <div class="table-data">{{word.learned}}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+    	<p>Please login <a href="/login">here</a></p>
+    {% endif %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/table_filter.js' %}"></script>
+
+{% endblock %}

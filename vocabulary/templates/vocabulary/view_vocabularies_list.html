@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}
+View Vocabulary
+{% endblock %}
+
+{% block content %}
+    <div class="full_todolist_field">
+        <div class="fake_todolist_field"></div>
+           <form method="post", action="#" class="todolist_field_form">
+               {% csrf_token %}
+               <div class="liststodo_body">
+                   <p> For user
+                       <span  class = 'view_show_lists'>{{ response.user }}</span> found
+                       <span  class = 'view_show_lists'>{{ vocabularies|length }}</span> Vocabularies
+                   </p>
+                   <div class="checkboxes_todolist">
+                       {% for vc in vocabularies %}
+                           <div class="form-check">
+                               <input class="form-check-input"
+                                   type="checkbox"
+                                   style="width: 20px;
+                                          height: 20px;"
+                                   value="clicked"
+                                   name="voc{{vc.id}}"
+                                   id="flexCheckDefault">
+                                   <label class="form-check-label" for="flexCheckDefault">
+                                       <p>
+                                           <a href="words_list_{{vc.id}}">
+                                           {{vc.name}}
+                                           </a>
+                                       </p>
+                                   </label>
+                           </div>
+                       {% endfor %}
+                   </div>
+               </div>
+               <div class="todolisttools">
+                   <div class="create_tool">
+                       <div class="input-group input-group-lg">
+                           <button type="submit",
+                                   name="create"
+                                   value="create",
+                                   style="width: 170px",
+                                   class="btn btn-success">
+                                   Create
+                           </button>
+                           {{form.name}}
+                       </div>
+                   </div>
+                </div>
+           </form>
+    </div>
+{% endblock %}

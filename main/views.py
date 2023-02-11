@@ -10,16 +10,12 @@ def home(response):
 
 def view_to_do_lists(response):
     if response.method == 'POST':
-        print(dir(response))
-        print(response.POST.get)
         if response.POST.get("delete"):
             for td in response.user.todolist.all():
                 if response.POST.get("td_list"+str(td.id)) == "clicked":
                     td.delete()
-
         if response.POST.get("create"):
             form = CreatesNewList(response.POST)
-            print(form)
             if form.is_valid():
                 n = form.cleaned_data["name"]
                 t = ToDoList(name=n)

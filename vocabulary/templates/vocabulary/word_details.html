@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <style>
+      .word_container {
+        display: flex;
+        justify-content: center;
+        }
+      .word_container_inside {
+        margin-top: 50px;
+        width: 800px;
+        }
+      .main_text {
+        font-size: 18px;
+        }
+      .word {
+        font-size: 25px;
+        color: blue;
+        }
+      .date {
+        font-size: 25px;
+        color: grey;
+        }
+      .flags_values {
+        font-size: 25px;
+        color: red;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}
+    Word details
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="word_container" id="word_container">
+            <div class="word_container_inside" id="word_container_inside">
+                <div class="word_itself_block_word">
+                    <span class="main_text"> The word </span>
+                    <span class="word">{{word.word}}</span>
+                    <span class="main_text"> was added at </span>
+                    <span class="date">{{word.date_creation}}</span>
+                </div>
+                <div class="main_meaning_block_word">
+                    <span class="main_text">The following translation: </span>
+                    <span class="word">{{word.main_translation}}</span>
+                </div>
+
+                <div class="additional_meaning_block_word">
+                    <span class="main_text">The following additional meanings exists:</span>
+                    <span class="word">{{word.additional_meaning}}</span>
+                </div>
+                <div class="word_explanation_block_word">
+                    <span class="explanation">{{word.word_explanation}}</span>
+                </div>
+                <div class="on_repeate_block_word">
+                    <span class="main_text">Repeate word: </span>
+                    <span class="flags_values">{{word.on_repeat}}</span>
+                </div>
+                <div class="learned_block_word">
+                    <span class="main_text">Learned: </span>
+                    <span class="flags_values">{{word.learned}}</span>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    	<p>Please login <a href="/login">here</a></p>
+    {% endif %}
+
+{% endblock %}
