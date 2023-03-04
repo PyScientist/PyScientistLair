@@ -1,0 +1,162 @@
+.desktop_main {
+  background-image: url("/static/images/pattaya_beach.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-width:1200px;
+  height: 100%;
+}
+
+.header_fake {
+  background-color: #D9D9D9;
+  opacity: .4;
+  width: 100%;
+  min-width:1200px;
+  height: 160px;
+  border-radius: 0px 0px 25px 25px;
+}
+
+.header {
+  margin-top: -160px;
+  opacity: .99;
+  width: 100%;
+  min-width:1200px;
+  height: 160px;
+  display: flex;
+  flex-flow: column;
+}
+
+div.header_title {
+    height: 120px;
+    font-size: 35px;
+    color: #818181;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+div.header_menu {
+    height: 40px;
+    display: flex;
+    flex-flow: row;
+}
+
+div.header_menu a {
+  padding-right: 24px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  }
+
+div.header_menu a.right {
+  padding-right: 0px;
+  padding-left: 24px;
+  }
+
+div.header_menu a:hover {
+  color:#F1F1F1;
+  }
+
+div.left_header {
+    height: 40px;
+    flex: 1;
+    display: flex;
+}
+
+div.user_menu {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+div.right_header {
+    height: 40px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.authorization_pannel {
+    padding-right: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.main_field_section {
+    display: grid;
+    gap: 55px;
+    grid-template-columns: auto;
+    }
+
+.content_field {
+    height: 100%;
+    min-height: 704px;
+    width: 100%;
+    min-width:1200px;
+    text-align: center;
+}
+
+#footer_fake {
+  background-color: #D9D9D9;
+  opacity: .4;
+  height: 160px;
+  width: 100%;
+  min-width:1200px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+#footer {
+  margin-top: -160px;
+  opacity: .99;
+  width: 100%;
+  min-width:1200px;
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-left:30px;
+  padding-right:30px
+}
+
+img.footer-logo {
+  width: 120px;
+  padding-right: 5px;
+}
+
+#cat_frame {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex: 1;
+}
+
+.footer span {
+    color: #818181;
+    font-size: 16px;
+    text-align: center;
+}
+
+#copyrite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+#sitemap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+#social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
