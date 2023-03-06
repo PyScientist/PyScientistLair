@@ -10,7 +10,8 @@ env_file = os.path.join(BASE_DIR, ".env_vps")
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
-ALLOWED_HOSTS = ["35.240.185.82"]
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
+CSRF_TRUSTED_ORIGINS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,11 +61,11 @@ WSGI_APPLICATION = 'PyScientistsLair.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '192.168.56.102',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
-        'NAME': 'DJ',
-        'USER': 'pyscientist',
-        'PASSWORD': 'Sobakka666',
+        'NAME': env("POSTGRE_DB_NAME"),
+        'USER': env("POSTGRE_DB_USERNAME"),
+        'PASSWORD': env("POSTGRE_DB_PASSWORD"),
     }
 }
 
@@ -91,7 +92,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = []
-STATIC_ROOT = "static"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
