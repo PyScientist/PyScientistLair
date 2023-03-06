@@ -1,8 +1,0 @@
-.gcloudignore
-.git
-.gitignore
-db.sqlite3
-venv/
-__pycache__/
-/setup.cfg
-main_launch.py
