@@ -5,7 +5,7 @@
     {% if user.is_authenticated %}
 		<div class="to_do_list_items_show_container">
 			<h1>{{ls.name}}</h1>
-			<form method="post", action="#">
+			<form method="post", action="">
 				{% csrf_token %}
 				{% for item in ls.item_set.all %}
 					<div class="input-group mb-3">

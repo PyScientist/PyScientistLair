@@ -1,5 +1,6 @@
 import io
 import os
+from sys import platform
 from urllib.parse import urlparse
 import google.cloud.secretmanager as secretmanager
 import environ
@@ -14,7 +15,7 @@ if os.path.isfile(env_file):
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
-ALLOWED_HOSTS = [env("ALLOWED_HOSTS")]
+ALLOWED_HOSTS = [env("ALLOWED_HOSTS"), env("ALLOWED_HOSTS_WIN")]
 CSRF_TRUSTED_ORIGINS = []
 
 INSTALLED_APPS = [
@@ -61,17 +62,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PyScientistsLair.wsgi.application'
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-        'NAME': env("POSTGRE_DB_NAME"),
-        'USER': env("POSTGRE_DB_USERNAME"),
-        'PASSWORD': env("POSTGRE_DB_PASSWORD"),
+if platform == "linux" or platform == "linux2":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+            'NAME': env("POSTGRE_DB_NAME"),
+            'USER': env("POSTGRE_DB_USERNAME"),
+            'PASSWORD': env("POSTGRE_DB_PASSWORD"),
+        }
     }
-}
+if platform == "win32":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'sqlite_pysci.db',
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -104,4 +112,4 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_REDIRECT_URL = "/home"
-LOGOUT_REDIRECT_URL = "/login"
+LOGOUT_REDIRECT_URL = "/auth/login"

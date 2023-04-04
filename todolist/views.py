@@ -21,8 +21,7 @@ def view_to_do_lists(response):
                 t = ToDoList(name=n)
                 t.save()
                 response.user.todolist.add(t)
-        return HttpResponseRedirect("")
-
+        return HttpResponseRedirect("/view_to_do_lists/")
     else:
         form = CreatesNewList()
 
@@ -58,6 +57,7 @@ def view_items_in_list_to_do(response, id_to_do_list):
              for item in td_list.item_set.all():
                  if response.POST.get("DelItem") == "del_" + str(item.id):
                     item.delete()
+
     return render(response, "todolist/list_to_do_items.html", {"ls": ls})
 
 

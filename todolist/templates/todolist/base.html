@@ -42,9 +42,9 @@
                     </div>
                     <div class="right_header">
                         <div class="authorization_pannel">
-                          {% if user.is_authenticated == False %} <a class="right" href="/login">Login</a> {% endif %}
-                          {% if user.is_authenticated == False %} <a class="right" href="/register">SignUp</a> {% endif %}
-                          {% if user.is_authenticated %} <a class="right" href="/logout">Logout</a> {% endif %}
+                          {% if user.is_authenticated == False %} <a class="right" href="/auth/login">Login</a> {% endif %}
+                          {% if user.is_authenticated == False %} <a class="right" href="/auth/register">SignUp</a> {% endif %}
+                          {% if user.is_authenticated %} <a class="right" href="/auth/logout">Logout</a> {% endif %}
                         </div>
                     </div>
                 </div>

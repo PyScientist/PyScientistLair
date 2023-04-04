@@ -1,6 +1,9 @@
-/.env
 /.env_vps
-/db.sqlite3
 venv/
 /main_launch.py
 /config_files/
+uwsgi_params
+/PyScientistsLair_wsgi.ini
+/test_uwsgi.py
+**/__pycache__/
+/sqlite_pysci.db
