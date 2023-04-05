@@ -127,7 +127,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'file',
-            'filename': f'{BASE_DIR}/PyScientistLair_logger.log'
+            'filename': os.path.join(BASE_DIR, 'PyScientistLair_logger.log')
         },
     },
     'loggers': {
