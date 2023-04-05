@@ -7,3 +7,4 @@ uwsgi_params
 /test_uwsgi.py
 **/__pycache__/
 /sqlite_pysci.db
+/logger.log
