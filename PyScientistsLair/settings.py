@@ -119,7 +119,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'file': {
-            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+            'format': '%(asctime)-6s %(name)-6s %(levelname)-6s %(message)s'
         },
     },
     'handlers': {
@@ -133,7 +133,8 @@ LOGGING = {
     'loggers': {
         '': {
             'level': 'DEBUG',
-            'handlers': ['file']
-        }
-    }
+            'handlers': ['file'],
+            'propogate': True,
+        },
+    },
 }
